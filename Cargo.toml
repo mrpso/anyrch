@@ -1,0 +1,46 @@
+[workspace]
+members = ["derive"]
+
+[package]
+name = "anyrch"
+version = "0.0.1"
+edition = "2024"
+
+[features]
+# default = []
+# default = ["arm"]
+default = ["unicorn", "arm"]
+unicorn = ["dep:unicorn-engine"]
+
+arm = ["anyrch-derive/arm"]
+aarch64 = ["anyrch-derive/aarch64"]
+x86 = ["anyrch-derive/x86"]
+x86_64 = ["anyrch-derive/x86_64"]
+mips = ["anyrch-derive/mips"]
+mips64 = ["anyrch-derive/mips64"]
+riscv32 = ["anyrch-derive/riscv32"]
+riscv64 = ["anyrch-derive/riscv64"]
+powerpc = ["anyrch-derive/powerpc"]
+powerpc64 = ["anyrch-derive/powerpc64"]
+sparc = ["anyrch-derive/sparc"]
+sparc64 = ["anyrch-derive/sparc64"]
+loongarch32 = ["anyrch-derive/loongarch32"]
+loongarch64 = ["anyrch-derive/loongarch64"]
+m68k = ["anyrch-derive/m68k"]
+s390x = ["anyrch-derive/s390x"]
+# wasm32 = ["anyrch-derive/wasm32"]
+# wasm64 = ["anyrch-derive/wasm64"]
+
+[dependencies]
+anyrch-derive = { path = "derive" }
+bitflags = "2.13.2"
+bytes = "1.12.1"
+hashbrown = "0.17.1"
+libc = "0.2.189"
+parking_lot = "0.12.5"
+rand = "0.10.2"
+thiserror = "2.0.20"
+
+[dependencies.unicorn-engine]
+version = "=2.0.1"
+optional = true

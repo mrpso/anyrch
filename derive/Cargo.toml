@@ -1,0 +1,31 @@
+[package]
+name = "anyrch-derive"
+version = "0.0.1"
+edition = "2024"
+
+[lib]
+proc-macro = true
+
+[features]
+# default = ["arm"]
+arm = []
+aarch64 = []
+x86 = []
+x86_64 = []
+mips = []
+mips64 = []
+riscv32 = []
+riscv64 = []
+powerpc = []
+powerpc64 = []
+sparc = []
+sparc64 = []
+loongarch32 = []
+loongarch64 = []
+m68k = []
+s390x = []
+
+[dependencies]
+syn = "3.0"
+quote = "1.0"
+proc-macro2 = "1.0"
